@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/static/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="tieude container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h4>Lót đường</h4>
+				<hr>
+				<h6>Coder QandA</h6>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-4">
+	  <a class="navbar-brand pl-5" href="{{url_for('index')}}">Home</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item dropdown active text-center">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Tự học
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">C/C++</a>
+	          <a class="dropdown-item" href="#">Java</a>
+	          <a class="dropdown-item" href="#">Java</a>	
+	          <a class="dropdown-item" href="#">Java</a>
+	          <a class="dropdown-item" href="#">C/C++</a>
+	          <a class="dropdown-item" href="#">Java</a>
+	          <a class="dropdown-item" href="#">Java</a>	
+	          <a class="dropdown-item" href="#">Java</a>
+	        </div>
+
+	      </li>
+	      <li class="nav-item dropdown active text-center">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Học cùng mentor
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">DS mentor</a>
+	        </div>
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+	    </form>
+	  </div>
+	</nav>
+	<div class = "container">
+		<br>
+		<h3>1. Bạn có phù hợp với ngành Công nghệ thông tin ? </h3>
+		<h4>Công nghệ Thông tin (CNTT), một ngành nghề đang nhận được rất nhiều sự quan tâm từ các Thí sinh trong các năm gần đây. Nhưng liệu bạn có tự hỏi rằng mình có thực sự đam mê và muốn theo đuổi ngành này không? Hay chỉ đơn thuần là đi theo số đông?</h4><br>	
+		<h5><strong>Làm sao để biết mình đam mê ngành CNTT thực sự?</strong></h5>
+		<p>Hãy thử tưởng tượng: Bạn sẽ coi laptop như một người bạn mà mình phải gặp 8 tiếng mỗi ngày (hoặc có khi hơn thế), kể cả cuối tuần. Nhưng thay vì trong laptop là hàng loạt trò chơi, nó sẽ được cài đặt bởi cả tá ứng dụng dùng để lập trình và đồ họa "chán ngắt".</p>
+		<img src="https://timviec365.com/pictures/images/coder-la-gi.jpg" alt="Coder in work">
+		<p>Nếu bạn cảm thấy vẫn có chút quan tâm hay thích thú, hãy tiếp tục nghĩ đến cảnh bạn sẽ nhận được cả mớ đồ án và phải ngồi "gõ" ngày đêm để làm ra được một phần mềm, trang web hoàn chỉnh.</p>
+		<p>Bạn sẽ được ngồi lê la từ văn phòng cho đến quán cafe, hoặc bất cứ đâu chỉ để hoàn thành xong được công việc đúng hạn. Đặc biệt, bạn phải chịu được những yêu cầu thay đổi bất chợt từ thầy cô hay khách hàng của mình.</p>
+		<p>Sau khi đã mường tượng ra, và bạn sẵn sàng để đương đầu một cách đầy phấn khởi thì... "Xin chúc mừng, bạn đã biết mình đam mê ngành CNTT rồi đấy!".</p>
+		<h5><strong>Đam mê là 1 chuyện, làm sao biết bạn có phù hợp?</strong></h5>
+		<img src="https://chefjob.vn/wp-content/uploads/2018/06/dinh-huong-nghe-nghiep.jpg" alt="Đam mê và phù hợp"><br>
+		<p>Theo đuổi một ngành nghề, ngoài chuyện đam mê, tính cách và tố chất của một người cũng quan trọng không kém. Thường để hòa nhập được trong môi trường mang đậm tính CNTT, chúng ta phải sở hữu một hoặc nhiều điểm sau.</p>
+		<ul style="list-style-position: inside;" >
+			<li>Cẩn thận trong công việc (Không cẩn thận sẽ làm hỏng cả phần cứng, hoặc làm phần mềm chạy bị lỗi).</li>
+			<li>Kiên trì, nhẫn nại (Khi phát sinh lỗi trong lúc lập trình, nếu không kiên nhẫn sẽ rất dễ nản).</li>
+			<li>Ham học hỏi (Để tự bản thân cập nhật những điều mới nhất).</li>
+			<li>Khả năng làm việc, quản lí theo nhóm (Không một đồ án, dự án nào liên quan đến CNTT mà ta có thể tự mình thực hiện).</li>
+			<li>Thích học ngoại ngữ, đặc biệt là tiếng Anh (Để đọc được các tài liệu nước ngoài).</li>
+			<li>...</li>
+		</ul>
+	</div>
+	<div class = "container">
+		<h3>2. Nhu cầu về ngành công nghệ thông tin hiện nay</h3>
+		<h4>Trong những năm trở lại đây, ngành công nghệ thông tin đã có sự tăng trưởng chóng mặt và thậm chí được dự đoán sẽ lao lên vị trí top đầu trong thị trường lao động Việt Nam trong 10 năm tới</h4><br>
+		<h5><strong>Thiếu hụt nguần nhân lực trầm trọng</strong></h5>
+		<p>Theo thống kê của VietnamWorks, trong 3 năm vừa qua, số lượng công việc ngành CNTT – Phần Mềm đã tăng trung bình 47%/ năm trong khi số lượng nhân sự ngành này chỉ tăng ở mức trung bình 8% và theo Bộ Thông tin và Truyền thông, tới năm 2025, Việt Nam thiếu hụt hơn 800.000 nhân sự IT.</p>
+		<h5><strong>Ngành nghề thu nhập cao</strong></h5>
+		<p>Mức lương phổ biến bắt đầu từ mới ra trường, chưa có kinh nghiệm đến nhân viên là từ 15 - 30 triệu đồng, quản lý từ 2500 - 3000 USD/ tháng và giám đốc trở lên từ 3500- 5000 USD/ tháng.</p>
+		<img src="https://bachkhoa-aptech.edu.vn/upload/image/silekhaosat3.jpg" alt="Lương trung bình của ngành IT" width="960" height="540">
+		<h5><strong>Cơ hội thành đạt rộng mở </strong></h5>
+		<p>Các mô hình ươm mầm và tăng tốc khởi nghiệp đã hoạt động tích cực hơn, trong đó số lượng không nhỏ các khởi nghiệp tiềm năng, đặc biệt khởi nghiệp trong lĩnh vực công nghệ và giáo dục, được  nhận vốn ban đầu cùng sự cố vấn và hỗ trợ nguồn lực toàn diện. 
+		Ông Phạm Minh Tuấn, Tổng giám đốc kiêm Chủ tịch HĐQT Tổ hợp giáo dục TOPICA, chia sẻ: "Với sức trẻ và khả năng nắm bắt nhanh các công nghệ mới, người trẻ càng có nhiều cơ hội lập nghiệp trong lĩnh vực này". Là người từng có kinh nghiệm đào tạo và làm việc cùng nhiều doanh nhân khởi nghiệp chia sẻ rằng, ông Tuấn cho rằng hiện nay cơ hội cho các doanh nghiệp khởi nghiệp ngày càng nhiều bởi các công nghệ mới đang thay đổi rất nhanh.</p>
+	</div>
+	<div class = "container">
+		<h3>3. Chỉ tiêu tuyển sinh ngành công nghệ thông tin trong những năm gần đây</h3>
+		<h4>Các trường đại học liên tục tăng chỉ tiêu và mở thêm các ngành về công nghệ thông tin</h4>
+		<h5>Cụ thể:</h5>
+		<p>- Trường ĐH Công nghệ thông tin (ĐH Quốc gia TP.HCM) bắt đầu tuyển sinh một số ngành học mới liên quan đến trí tuệ nhân tạo như Khoa học máy tính (hướng trí tuệ nhân tạo), Kỹ thuật máy tính (hướng hệ thống nhúng và IoT). Bên cạnh đó, trường tiếp tục đào tạo ngành Công nghệ thông tin (chất lượng cao định hướng Nhật Bản).</p>
+		<p>- Học viện Công nghệ Bưu chính Viễn thông (PTIT) mở ngành Kỹ thuật điều khiển và tự động hóa</p>
+		<p>- Trường ĐH Kinh tế - Luật (ĐHQG - HCM) mở ngành Kinh doanh số và Trí tuệ nhân tạo thuộc khoa hệ thống thông tin</p>
+		<p>- Trường ĐH Nguyễn Tất Thành dự kiến mở ngành Kỹ thuật Phần mềm, Mạng máy tính và Truyền thông dữ liệu.</p>
+		<p>- Trường ĐH Sư phạm Kỹ thuật TP.HCM đào tạo thêm ngành Hệ thống nhúng và IoT.</p>
+		<p>- Trường ĐH Tài chính - Kinh tế mở thêm ngành Khoa học dữ liệu.</p>
+		<p>- Trường ĐH quốc tế Hồng Bàng dự kiến tuyển 50 chỉ tiêu cho ngành mới Trí tuệ nhân tạo.</p>
+		<p> Từ đó, chỉ tiêu tuyển sinh ở ngành Công nghệ thông tin tại các trường đại học ngày càng tăng, thể hiện qua bảng chỉ tiêu của 3 trường đại học lớn sau: </p> 
+		<img src="https://tuyensinh.uit.edu.vn/sites/default/files/uploads/files/sosanh_diemchuan.jpg" alt="Chỉ tiêu 3 trường Đại học hàng đầu ở Việt Nam"><br>
+	</div>
+</body>
+</html>

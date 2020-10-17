@@ -5,7 +5,5 @@ class User():
         self.pword = pword
         self.status = status
         self.coin = coin
-    
-
 users = {}
-    
+uname = ''

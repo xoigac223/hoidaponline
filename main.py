@@ -1,5 +1,5 @@
 import pymysql
-from app import app
+from app import app, socketio
 from db_config import mysql
 from flask import jsonify
 from flask import flash, request
@@ -53,5 +53,8 @@ def update_user(id):
 	finally:
 		cursor.close() 
 		conn.close()
-if __name__ == "__main__":
-	app.run()
+
+# if __name__ == "__main__":
+# 	app.run()
+if __name__ == '__main__':
+    socketio.run(app)

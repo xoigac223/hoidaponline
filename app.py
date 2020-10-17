@@ -1,13 +1,23 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_cors import CORS, cross_origin
-from user import User, users
+from user import User, users, uname
+from flask_login import LoginManager
 import requests
- 
+from flask_socketio import SocketIO, send
+
 app = Flask(__name__)
-uname = None
+socketio = SocketIO(app, cors_allowed_origins='*')
+
+@socketio.on('message')
+def handleMessage(msg):
+	print('Message: ' + msg)
+	send(msg, broadcast=True)
+
+
 @app.route('/', methods=["GET"])
 def index():
-	return render_template('index.html', Template_uname = uname)
+	return render_template('index.html')
+	
 
 @app.route('/c')
 def hoc_c():
@@ -32,14 +42,23 @@ def login():
 			u = User(id, uname, pword, status, coin)
 			users[uname] = u
 			requests.put("http://127.0.0.1:5000/update/{}".format(u.id))
-			return redirect(url_for('nguoidung', uname = uname))
+			return redirect(url_for('nguoidung', uname = u.uname))
 	return render_template('login.html')
 	
 @app.route('/<uname>',methods=["GET", "POST"])
 def nguoidung(uname):
 	user ={}
-	user[uname] = users[uname].uname
+	user[uname] = users[uname].uname	
 	user['status'] = users[uname].status
 	user['coin'] = users[uname].coin
 	return render_template('user.html', Template_uname = uname, user = user)
+
+@app.route('/index/<uname>', methods=["GET", "POST"])
+def index_user(uname):
+	render_template('index_user.html')
+
+@app.route('/chatroom')
+def chatroom():
+	return render_template('chatroom.html')
+
 CORS(app)	

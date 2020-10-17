@@ -1,8 +1,37 @@
 <html>
 <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
 <title>Chat Room</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<style>
+	body {
+		background-color: #f0f2f5;
+	}
+	div {
+		background-color: #ffffff;
+		padding: 50px 50px;
+		width: 700px;
+		height: 100%;
+		margin: auto;
+		position: relative;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	}
+	input{
+		position: absolute;
+		width: 650px;
+		bottom: 0;
+		left: 0;
+	}
+	button {
+		position: absolute;
+		width: 50px;
+		bottom: 0;
+		right: 0;
+	}
+</style>
 </head>
 <body>
 <script type="text/javascript">
@@ -11,11 +40,11 @@ $(document).ready(function() {
 	var socket = io.connect('http://127.0.0.1:5000');
 
 	socket.on('connect', function() {
-		socket.send('User has connected!');
+		socket.send('Kết nối thành công');
 	});
 
 	socket.on('message', function(msg) {
-		$("#messages").append('<li>'+msg+'</li>');
+		$("#messages").append('<li>'+ msg +'</li>');
 		console.log('Received message');
 	});
 
@@ -26,8 +55,11 @@ $(document).ready(function() {
 
 });
 </script>
-<ul id="messages"></ul>
-<input type="text" id="myMessage">
-<button id="sendbutton">Send</button>
+<div id = "messages">
+	<ul id="messages"></ul> 
+
+	<input type="text" id="myMessage">
+	<button id="sendbutton">Send</button>
+</div>
 </body>
 </html>

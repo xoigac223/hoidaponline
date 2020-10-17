@@ -59,14 +59,14 @@ def nguoidung(uname):
 def index_user(uname):
 	return render_template('index_user.html')
 
-@app.route('/chatroom')
-def chatroom():
-	return render_template('chatroom.html')
+@app.route('/chatroom/<username>/')
+def chatroom(username):
+	return render_template('chatroom.html', template_username = username)
 
 @app.route('/mentor')
 def mentor():
 	list_questions = getQuestions()
-	return render_template('mentor.html', template_list_questions = list_questions)
+	return render_template('mentor.html', template_list_questions = list_questions, template_name = "mentor")
 
 @app.route('/ask/<u_name>', methods=["GET", "POST"])
 def ask(u_name):
@@ -82,7 +82,7 @@ def ask(u_name):
     		"coin" : coin
 		}
 		requests.post("http://127.0.0.1:5000/add_question", json = question) 
-		return render_template('ask.html')
+		return redirect(url_for('chatroom', username = u_name))
 	return render_template('ask.html')
 
 CORS(app)	

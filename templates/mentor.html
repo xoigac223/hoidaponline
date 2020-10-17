@@ -7,7 +7,7 @@
 <div class="container">
     {% for question in template_list_questions %}
     <h3>
-    <a href="#" class="">
+    <a href="chatroom/{{ question.user_ask }}">
         {{ question.title }}</a>
     </h3>
     <p>{{ question.user_ask}} - {{ question.coin }}</p>

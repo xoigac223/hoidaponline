@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    <p>Tên đăng nhập: {{ user[Template_uname] }}</p>
+    <p>Trạng thái: {{ user['status'] }}</p>
+    <p>Coin: {{ user['coin'] }}</p>
+{% endblock %}

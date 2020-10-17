@@ -54,6 +54,45 @@ def update_user(id):
 		cursor.close() 
 		conn.close()
 
+@app.route('/questions')
+def questions():
+	try:
+		conn = mysql.connect()
+		cursor = conn.cursor(pymysql.cursors.DictCursor)
+		cursor.execute("SELECT * FROM questions_online")
+		rows = cursor.fetchall()
+		res = jsonify(rows)
+		res.status_code = 200
+		return res
+	except Exception as e:
+		print(e)
+	finally:
+		cursor.close() 
+		conn.close()
+
+@app.route('/add_question', methods=['POST'])
+def add_question():
+	try:
+		_json = request.json
+		_title = _json['title']
+		_body = _json['body']
+		_user_ask = _json['user_ask']
+		_coin = _json['coin']
+
+		sqlQuery = "INSERT INTO questions_online(title, body, user_ask, coin) VALUES(%s, %s, %s, %s)"
+		data = (_title, _body, _user_ask, _coin,)
+		conn = mysql.connect()
+		cursor = conn.cursor()
+		cursor.execute(sqlQuery, data)
+		conn.commit()
+		res = jsonify('Student created successfully.')
+		res.status_code = 200
+		return res
+	except Exception as e:
+		print(e)
+	finally:
+		cursor.close() 
+		conn.close()
 # if __name__ == "__main__":
 # 	app.run()
 if __name__ == '__main__':

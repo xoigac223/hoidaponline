@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask</title>
+    <link rel="stylesheet" href="/static/ask.css">
+    <script src="https://kit.fontawesome.com/c8c7e10626.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Đặt câu hỏi công khai</h1>
+        <div class="ask">
+            <div class="ask1">
+                <form method="POST">
+                <label for="title" class="title">Tiêu đề</label></br>
+                <input type="text" name="title" placeholder="Nhập tiêu đề câu hỏi"></br>
+                <label for="body">Phần thân</label></br>
+                <p>Tất cả thông tin của bạn</p>
+                <div class="area">
+                    <div class="area-nav">
+                        <i class="fas fa-bold"></i>
+                        <i class="fas fa-italic"></i>
+                        <i class="fas fa-link"></i>
+                        <i class="fas fa-images"></i>
+                        <i class="fas fa-list"></i>
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <textarea name ="body" cols="30" rows="10" class="area-input"></textarea>
+                </div>
+                <label for="coin">Điền giá tiền</label><br>
+                <input type="text" name="coin" placeholder="Số coin"></br>
+                <input type="submit" value="Gửi câu hỏi" name="submit">
+                </form>
+            </div>
+            <div class="ask2"></div>
+        </div>
+    </div>
+</body>
+</html>

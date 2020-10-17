@@ -4,6 +4,8 @@ from user import User, users, uname
 from flask_login import LoginManager
 import requests
 from flask_socketio import SocketIO, send
+from questions import Question, getQuestions
+
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins='*')
@@ -55,10 +57,32 @@ def nguoidung(uname):
 
 @app.route('/index/<uname>', methods=["GET", "POST"])
 def index_user(uname):
-	render_template('index_user.html')
+	return render_template('index_user.html')
 
 @app.route('/chatroom')
 def chatroom():
 	return render_template('chatroom.html')
+
+@app.route('/mentor')
+def mentor():
+	list_questions = getQuestions()
+	return render_template('mentor.html', template_list_questions = list_questions)
+
+@app.route('/ask/<u_name>', methods=["GET", "POST"])
+def ask(u_name):
+	requests.get("http://127.0.0.1:5000/add_question")
+	if len(request.form) > 0:
+		title = request.form["title"]
+		body = request.form["body"]
+		coin = request.form["coin"]
+		question = {
+    		"title" : title,
+    		"body" : body,
+    		"user_ask" : u_name,
+    		"coin" : coin
+		}
+		requests.post("http://127.0.0.1:5000/add_question", json = question) 
+		return render_template('ask.html')
+	return render_template('ask.html')
 
 CORS(app)	

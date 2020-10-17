@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-4 sticky-top">
-	  <a class="navbar-brand pl-5" href="{{ url_for('index') }}">Home</a>
+	  <a class="navbar-brand pl-5" href="#">Danh sách câu hỏi hiện có</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -43,40 +43,13 @@
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item dropdown active text-center">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Tự học
+	          MyAccount
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">C/C++</a>
-	          <a class="dropdown-item" href="#">Java</a>
-	          <a class="dropdown-item" href="#">Java</a>	
-	          <a class="dropdown-item" href="#">Java</a>
-	          <a class="dropdown-item" href="#">C/C++</a>
-	          <a class="dropdown-item" href="#">Java</a>
-	          <a class="dropdown-item" href="#">Java</a>	
-	          <a class="dropdown-item" href="#">Java</a>
+	          <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+	          <a class="dropdown-item" href="#">Rút tiền</a>
 	        </div>
-
-	      </li>
-	      <li class="nav-item dropdown active text-center">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Học cùng mentor
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">DS mentor</a>
-	        </div>
-		  </li>
-		  <li class="nav-item dropdown active text-center">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          RoadMap
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="{{url_for('roadmap_frontend')}}">Front End</a>
-	        </div>
-		  </li>	  
 		</ul>
-	    <form class="form-inline my-2 my-lg-0">
-	      <button class="btn btn-success my-2 my-sm-0" type="submit"><a href="{{url_for('login')}}">Login</a></button>
-		</form>
 	  </div>
 	</nav>
 	{% block content %}

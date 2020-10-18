@@ -4,7 +4,7 @@ from user import User, users, uname
 from flask_login import LoginManager
 import requests
 from flask_socketio import SocketIO, send
-from questions import Question, getQuestions
+from questions import Question, getQuestions, question
 
 
 app = Flask(__name__)
@@ -24,6 +24,10 @@ def index():
 @app.route('/c')
 def hoc_c():
 	return render_template('c.html')
+
+@app.route('/list_mentor')
+def list_mentor():
+	return render_template('list_mentor.html')
 
 @app.route('/roadmap/frontend')
 def roadmap_frontend():
@@ -55,13 +59,23 @@ def nguoidung(uname):
 	user['coin'] = users[uname].coin
 	return render_template('user.html', Template_uname = uname, user = user)
 
+@app.route('/done/<user_ask>/<coin>',methods=["GET", "POST"])
+def done(user_ask, coin):
+	user ={}
+	user[user_ask] = users[user_ask].uname	
+	user['status'] = users[user_ask].status
+	user['coin'] = str(int(users[user_ask].coin) - int(coin))
+	return render_template('user.html', Template_uname = user_ask, user = user)
+
 @app.route('/index/<uname>', methods=["GET", "POST"])
 def index_user(uname):
 	return render_template('index_user.html')
 
 @app.route('/chatroom/<username>/')
 def chatroom(username):
-	return render_template('chatroom.html', template_username = username)
+	list_questions = getQuestions()
+	q = question(list_questions, username)
+	return render_template('chatroom.html', template_q = q)
 
 @app.route('/mentor')
 def mentor():
@@ -84,5 +98,9 @@ def ask(u_name):
 		requests.post("http://127.0.0.1:5000/add_question", json = question) 
 		return redirect(url_for('chatroom', username = u_name))
 	return render_template('ask.html')
+
+@app.route('/about')
+def about():
+	return render_template('aboutus.html')
 
 CORS(app)	

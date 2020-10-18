@@ -3,6 +3,7 @@ from app import app, socketio
 from db_config import mysql
 from flask import jsonify
 from flask import flash, request
+from questions import Question, getQuestions, question
 
 @app.route('/user/<username>/<password>')
 def user(username, password):
@@ -41,6 +42,27 @@ def users():
 def update_user(id):
 	try:
 		sql = "UPDATE users SET status = 1 WHERE id={}".format(id)
+		conn = mysql.connect()
+		cursor = conn.cursor()
+		cursor.execute(sql)
+		conn.commit()
+		res = jsonify('User updated successfully.')
+		res.status_code = 200
+		return res
+	except Exception as e:
+		print(e)
+	finally:
+		cursor.close() 
+		conn.close()
+
+@app.route('/update_question/<user_ask>/<coin>', methods=['PUT'])
+def update_ques(user_ask, coin):
+	try:
+		icoin = int(coin)
+		list_questions = getQuestions()
+		q = question(list_questions, user_ask)
+		cur_coin = q.coin - icoin
+		sql = "UPDATE users SET coin = {} WHERE user_ask={}".format(cur_coin, user_ask)
 		conn = mysql.connect()
 		cursor = conn.cursor()
 		cursor.execute(sql)

@@ -10,7 +10,9 @@
     <a href="chatroom/{{ question.user_ask }}">
         {{ question.title }}</a>
     </h3>
-    <p>{{ question.user_ask}} - {{ question.coin }}</p>
+    <a><b>{{ question.user_ask}}</b> - </a>
+		<a><b>{{ question.coin }} </b></a>
+    <!-- <p>{{ question.user_ask}} - {{ question.coin }}</p> -->
     <p>{{ question.body }}.</p>
     <hr>
     {% endfor %}

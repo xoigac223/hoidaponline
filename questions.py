@@ -19,3 +19,8 @@ def getQuestions():
         new_question = Question(id, title, body, user_ask, coin)
         list_questions.append(new_question)
     return list_questions
+
+def question(list_questions, user_ask):
+    for q in list_questions:
+        if q.user_ask == user_ask:
+            return q

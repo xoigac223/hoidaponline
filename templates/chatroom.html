@@ -1,14 +1,17 @@
 <html>
-<head>
+<head lang = 'en'>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta charset="utf-8">
+
 <title>Chat Room</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <style>
 	body {
 		background-color: #f0f2f5;
+		font-family: monospace;
 	}
 	div {
 		background-color: #ffffff;
@@ -25,7 +28,14 @@
 		bottom: 0;
 		left: 0;
 	}
-	button {
+
+	#submit {
+		position: absolute;
+		width: 50px;
+		right: 0;
+		top: 0;
+	}
+	#sendbutton {
 		position: absolute;
 		width: 50px;
 		bottom: 0;
@@ -40,7 +50,7 @@ $(document).ready(function() {
 	var socket = io.connect('http://127.0.0.1:5000');
 
 	socket.on('connect', function() {
-		socket.send('Kết nối thành công');
+		socket.send("Question: {{ template_q.body }}");
 	});
 
 	socket.on('message', function(msg) {
@@ -55,9 +65,9 @@ $(document).ready(function() {
 
 });
 </script>
-<div id = "messages">
+<div>
+	<button><a id="submit" href = "{{ url_for('done', user_ask = template_q.user_ask, coin = template_q.coin) }}">Submit</a></button>
 	<ul id="messages"></ul> 
-
 	<input type="text" id="myMessage">
 	<button id="sendbutton">Send</button>
 </div>
